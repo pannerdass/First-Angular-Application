@@ -10,6 +10,7 @@ export class AppComponent {
 loadedFeature='recipe';
   onNavigate(value:string)
   {
-this.loadedFeature=value;
+console.log(value);
+    this.loadedFeature=value;
   }
 }
