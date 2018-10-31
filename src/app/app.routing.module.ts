@@ -8,10 +8,14 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { NoRecipeComponent } from "./recipes/no-recipe/no-recipe.component";
 
 const appRoutes:Routes=[
     {path:'',redirectTo:'/recipes',pathMatch:'full'},//empty path part of every path so we can use pathMacth properity value is full
-    {path:'recipes',component:RecipesComponent},
+    {path:'recipes',component:RecipesComponent,
+    children:[
+        {path:'',component:NoRecipeComponent,pathMatch:'full'},
+        {path:':id',component:RecipeDetailComponent}]},
     {path:'shopping-list',component:ShoppingListComponent}]
 
 @NgModule({

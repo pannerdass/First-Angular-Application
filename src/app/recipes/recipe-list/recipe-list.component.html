@@ -3,10 +3,11 @@
     <button class="btn btn-success">New Recipe</button>
    </div>
  </div> 
+ <hr/>
  <div class="row">
    <div class="col-xs-12">
  
-     <app-recipe-item *ngFor='let rec of recipes' [recipeItems]='rec'></app-recipe-item>
+     <app-recipe-item *ngFor='let rec of recipes; let i=index' [recipeItems]='rec' [index]="i"></app-recipe-item>
    </div>
 
  </div>

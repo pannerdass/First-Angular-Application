@@ -9,17 +9,12 @@ import { RecipeService } from 'src/app/services/recipe.services';
 })
 export class RecipeItemComponent implements OnInit {
 @Input()recipeItems:Recipe;
+@Input()index:Number;
 // @Output()recipeName=new EventEmitter<void>();
 // @ViewChild('HeaderName') Value:ElementRef;
   constructor(private recipeService:RecipeService) { }
 
   ngOnInit() {
   }
-  getRecipeName(Name:string){
-   
-   this.recipeService.recipeSeleted.emit(this.recipeItems);
-    // console.log(this.Value.nativeElement.textContent);
-    console.log(Name);
-
-  }
+ 
 }
