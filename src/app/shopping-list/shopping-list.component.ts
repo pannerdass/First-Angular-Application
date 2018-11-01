@@ -16,5 +16,7 @@ ingredients:Ingredient[]=[];
   ngOnInit() {
    this.ingredients= this.shoppingServices.getShopingItem();
   }
- 
+  onEditItems(i:number){
+    this.shoppingServices.itemsSelected.next(i)
+  }
 }
