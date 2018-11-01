@@ -14,6 +14,7 @@ import { ShoppingServices } from './services/shopping.services';
 import { AppRoutes } from './app.routing.module';
 
 import { NoRecipeComponent } from './recipes/no-recipe/no-recipe.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 //const route:Router=[{path:''}]
 
@@ -30,7 +31,9 @@ import { NoRecipeComponent } from './recipes/no-recipe/no-recipe.component';
     ShoppingEditComponent,
     DropDownDirective,
     
-    NoRecipeComponent
+    NoRecipeComponent,
+    
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,AppRoutes

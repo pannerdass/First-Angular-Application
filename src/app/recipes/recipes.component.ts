@@ -16,6 +16,7 @@ receipeItem:Recipe;
     this.recipeService.recipeSeleted.subscribe(
       (recipe:Recipe)=>{
         this.receipeItem=recipe;
+        console.log(recipe);
       }
     );
   }
