@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import{ FormsModule} from '@angular/Forms';
+import{ FormsModule, ReactiveFormsModule} from '@angular/Forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -15,6 +15,7 @@ import { AppRoutes } from './app.routing.module';
 
 import { NoRecipeComponent } from './recipes/no-recipe/no-recipe.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeService } from './services/recipe.services';
 
 //const route:Router=[{path:''}]
 
@@ -36,9 +37,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipeEditComponent
   ],
   imports: [
-    BrowserModule,AppRoutes,FormsModule
+    BrowserModule,AppRoutes,FormsModule,ReactiveFormsModule
   ],
-  providers:[ShoppingServices],
+  providers:[ShoppingServices,RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

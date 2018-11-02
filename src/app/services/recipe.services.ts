@@ -21,13 +21,23 @@ export class RecipeService{
     new Ingredient('pork',10)])];
 
    getRecipes():Recipe[]{
-       return this.recipes.slice();
+       return this.recipes;
    }
    getRecipe(id:number):Recipe{
-    return this.recipes.slice()[id];
+    return this.recipes[id];
 }
    addIngredientToShoppingList(ingredient:Ingredient[])
    {
      this.shoppIngService.addNewItems(ingredient); 
+   }
+
+   addRecipe(recipe:Recipe){
+this.recipes.push(recipe);
+   }
+   updateRecipe(index:number,recipe:Recipe){
+this.recipes[index]=recipe;
+   }
+   deleteRecipe(index:number){
+     this.recipes.splice(index,1);
    }
 }
