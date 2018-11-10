@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import{ FormsModule, ReactiveFormsModule} from '@angular/Forms';
+import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -16,6 +17,12 @@ import { AppRoutes } from './app.routing.module';
 import { NoRecipeComponent } from './recipes/no-recipe/no-recipe.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './services/recipe.services';
+import { from } from 'rxjs';
+import { DataStorage } from './shared/data-storage.service';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
 
 //const route:Router=[{path:''}]
 
@@ -34,12 +41,16 @@ import { RecipeService } from './services/recipe.services';
     
     NoRecipeComponent,
     
-    RecipeEditComponent
+    RecipeEditComponent,
+    
+    SignInComponent,
+    
+    SignUpComponent
   ],
   imports: [
-    BrowserModule,AppRoutes,FormsModule,ReactiveFormsModule
+    BrowserModule,AppRoutes,FormsModule,ReactiveFormsModule,HttpModule
   ],
-  providers:[ShoppingServices,RecipeService],
+  providers:[ShoppingServices,RecipeService,DataStorage,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
